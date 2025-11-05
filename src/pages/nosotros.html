@@ -1,13 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nosotros | Marranera PigWork</title>
+  <link rel="stylesheet" href="../Styles/style.css" />
 </head>
 <body>
-    <main>
-        <h1>Nosotros</h1>
-    </main>
+  <header class="header">
+    <div class="topbar">Carne fresca, seleccionada y empacada al vacío</div>
+    <nav class="container nav">
+      <a class="brand" href="./index.html"><div class="logo">PW</div><span>Marranera PigWork</span></a>
+      <ul>
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./servicio.html">Productos</a></li>
+        <li><a aria-current="page">Nosotros</a></li>
+        <li><a href="./index.html#contacto">Contáctenos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2>¿Quiénes somos?</h2>
+        <p class="lead">Somos una empresa familiar especializada en carne de cerdo, con más de 10 años garantizando frescura, inocuidad y sabor.</p>
+        <div class="cards">
+          <article class="card">
+            <img src="../assets/about-calidad.jpg" alt="Control de calidad" />
+            <div class="p">
+              <h3>Calidad y trazabilidad</h3>
+              <p>Trabajamos con granjas certificadas y mantenemos la cadena de frío hasta tu mesa.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="../assets/about-servicio.jpg" alt="Servicio al cliente" />
+            <div class="p">
+              <h3>Servicio cercano</h3>
+              <p>Te asesoramos en cortes, porcionado y preparaciones para que tus recetas queden perfectas.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="../assets/about-delivery.jpg" alt="Reparto a domicilio" />
+            <div class="p">
+              <h3>Entrega responsable</h3>
+              <p>Empaque al vacío y transporte refrigerado. Entregas el mismo día en zona urbana.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:var(--muted)">
+      <div class="container">
+        <h2>Misión</h2>
+        <p>Proveer carne de cerdo de excelente calidad, segura y sostenible, con el mejor servicio al cliente y precios justos.</p>
+        <h2 style="margin-top:24px">Visión</h2>
+        <p>Ser la marca de referencia regional en productos de cerdo y derivados artesanales, reconocida por su frescura y sabor.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Nuestro equipo</h2>
+        <div class="gallery">
+          <img src="../assets/team-1.jpg" alt="Maestro carnicero" />
+          <img src="../assets/team-2.jpg" alt="Equipo de empaque" />
+          <img src="../assets/team-3.jpg" alt="Repartidor" />
+          <img src="../assets/team-4.jpg" alt="Atención al cliente" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container grid">
+      <div>
+        <h3 style="color:#fff;margin-bottom:8px">Marranera PigWork</h3>
+        <p>Calle 123 #45-67, Barrio Centro, Ciudad</p>
+        <p>Horario: Lun–Sáb 8:00–18:00</p>
+      </div>
+      <div>
+        <h4 style="color:#fff;margin-bottom:8px">Enlaces</h4>
+        <ul style="list-style:none;display:grid;gap:6px">
+          <li><a href="./index.html">Inicio</a></li>
+          <li><a href="./servicio.html">Productos</a></li>
+          <li><a href="./nosotros.html">Nosotros</a></li>
+          <li><a href="./index.html#contacto">Contáctenos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:#fff;margin-bottom:8px">Contacto</h4>
+        <p>Tel:300 533 5525</p>
+        <p>Correo: ventas@pigwork.com</p>
+      </div>
+    </div>
+    <div class="copy">© <span id="y"></span> PigWork. Todos los derechos reservados.</div>
+  </footer>
+
+  <div class="whatsapp">
+    <a href="https://wa.me/573001112233?text=Hola%20PigWork,%20quisiera%20información." target="_blank" rel="noopener">
+      <span class="icon">🟢</span> WhatsApp
+    </a>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
