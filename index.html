@@ -1,12 +1,15 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cerdos DukMon</title>
   <link rel="stylesheet" href="./style.css" />
-  <meta name="description" content="Venta de carne de cerdo fresca: cortes prime, lechona, chorizos y más. Entregas a domicilio." />
+  <meta name="description"
+    content="Venta de carne de cerdo fresca: cortes prime, lechona, chorizos y más. Entregas a domicilio." />
 </head>
+
 <body>
   <header class="header">
     <!-- <div class="topbar">Envío GRATIS en compras mayores a $300.000 (área metropolitana)</div>
@@ -49,6 +52,7 @@
           <article class="card">
             <img src="../assets/card-costillas.jpg" alt="Costillas de cerdo frescas" />
             <div class="p">
+              
               <h3>Pierna</h3>
               <p>Pierna carnuda y pulpa, ideal para tus preparaciones diarias.</p>
               <p class="price">$24.900 / lb</p>
@@ -79,7 +83,9 @@
       <div class="container">
         <div class="band">
           <p><strong>¿Negocio o evento?</strong> Cotiza precios al por mayor y servicio de asado.</p>
-          <a class="btn btn-primary" href="https://wa.me/573001112233?text=Hola%20CerdosDukMon,%20quiero%20cotizar%20al%20por%20mayor." target="_blank" rel="noopener">Cotizar en WhatsApp</a>
+          <a class="btn btn-primary"
+            href="https://wa.me/573001112233?text=Hola%20CerdosDukMon,%20quiero%20cotizar%20al%20por%20mayor."
+            target="_blank" rel="noopener">Cotizar en WhatsApp</a>
         </div>
       </div>
     </section>
@@ -98,9 +104,12 @@
           </div>
         </div>
         <div class="carousel-nav">
-          <button aria-label="Diapositiva 1" class="active" onclick="document.getElementById('track').style.transform='translateX(0%)';act(0)"></button>
-          <button aria-label="Diapositiva 2" onclick="document.getElementById('track').style.transform='translateX(-100%)';act(1)"></button>
-          <button aria-label="Diapositiva 3" onclick="document.getElementById('track').style.transform='translateX(-200%)';act(2)"></button>
+          <button aria-label="Diapositiva 1" class="active"
+            onclick="document.getElementById('track').style.transform='translateX(0%)';act(0)"></button>
+          <button aria-label="Diapositiva 2"
+            onclick="document.getElementById('track').style.transform='translateX(-100%)';act(1)"></button>
+          <button aria-label="Diapositiva 3"
+            onclick="document.getElementById('track').style.transform='translateX(-200%)';act(2)"></button>
         </div>
       </div>
     </section>
@@ -110,17 +119,60 @@
       <div class="container">
         <h2>Contáctenos</h2>
         <p class="lead">Pedidos, cotizaciones y sugerencias. Responderemos a la mayor brevedad.</p>
+
         <div class="contact">
-          <form class="form" onsubmit="event.preventDefault(); alert('Gracias por escribirnos. Te contactaremos pronto.');">
-            <input class="input" type="text" placeholder="Nombre completo" required />
-            <input class="input" type="tel" placeholder="Teléfono" required />
-            <input class="input full" type="email" placeholder="Correo electrónico" required />
-            <textarea class="textarea full" placeholder="Escribe tu mensaje..." required></textarea>
-            <button class="btn btn-primary full" type="submit">Enviar mensaje</button>
+          <form id="form-wapp" class="form">
+            <input class="input" name="nombre" type="text" placeholder="Nombre completo" required />
+            <input class="input" name="telefono" type="tel" placeholder="Teléfono" required />
+            <input class="input full" name="correo" type="email" placeholder="Correo electrónico" required />
+            <textarea class="textarea full" name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+
+            <div class="full" style="display:flex;gap:10px;flex-wrap:wrap">
+              <button class="btn btn-primary" type="submit">Enviar por WhatsApp</button>
+              <button class="btn btn-outline" type="button" id="btnEmail">Enviar por Email</button>
+            </div>
           </form>
         </div>
       </div>
     </section>
+
+    <script>
+      // WhatsApp
+      document.getElementById('form-wapp').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const fd = new FormData(this);
+        const datos = {
+          nombre: fd.get('nombre'),
+          telefono: fd.get('telefono'),
+          correo: fd.get('correo'),
+          mensaje: fd.get('mensaje')
+        };
+        const texto = `Hola Cerdos Dukmon, soy ${datos.nombre}.
+Tel: ${datos.telefono}
+Correo: ${datos.correo}
+
+Mensaje:
+${datos.mensaje}`;
+        const url = 'https://wa.me/573043628003?text=' + encodeURIComponent(texto);
+        window.open(url, '_blank'); // abre WhatsApp web / app
+      });
+
+      // Email (mailto)
+      document.getElementById('btnEmail').addEventListener('click', function () {
+        const f = document.getElementById('form-wapp');
+        const fd = new FormData(f);
+        const asunto = 'Contacto desde el sitio web';
+        const cuerpo = `Nombre: ${fd.get('nombre')}
+Teléfono: ${fd.get('telefono')}
+Correo: ${fd.get('correo')}
+
+Mensaje:
+${fd.get('mensaje')}`;
+        const mailto = `mailto: angelbrahian026@gmail.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+        window.location.href = mailto; // abre el cliente de correo del usuario
+      });
+    </script>
+    
   </main>
 
   <footer class="footer">
@@ -151,7 +203,8 @@
 
   <!-- Botón flotante WhatsApp -->
   <div class="whatsapp" aria-label="WhatsApp">
-    <a href="https://wa.me/573005335525?text=Hola%20CerdosDukMon,%20necesito%20información%20sobre%20productos." target="_blank" rel="noopener">
+    <a href="https://wa.me/573005335525?text=Hola%20CerdosDukMon,%20necesito%20información%20sobre%20productos."
+      target="_blank" rel="noopener">
       <span class="icon">🟢</span> WhatsApp
     </a>
   </div>
@@ -159,11 +212,12 @@
   <script>
     // Poner año en el footer y activar indicador del carrusel
     document.getElementById('y').textContent = new Date().getFullYear();
-    function act(i){
+    function act(i) {
       const btns = document.querySelectorAll('.carousel-nav button');
-      btns.forEach(b=>b.classList.remove('active'));
+      btns.forEach(b => b.classList.remove('active'));
       btns[i].classList.add('active');
     }
   </script>
 </body>
+
 </html>
