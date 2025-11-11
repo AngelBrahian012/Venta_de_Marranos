@@ -59,7 +59,7 @@ body{
 
 /* Hero */
 .hero{
-  background:linear-gradient(180deg,#00000088,#00000066), url('../assets/hero.jpg') center/cover no-repeat;
+  background:linear-gradient(180deg,#00000088,#00000066), url('./assets/hero.jpg') center/cover no-repeat;
   color:var(--white);
   min-height:62vh;display:flex;align-items:center
 }
