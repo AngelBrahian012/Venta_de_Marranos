@@ -7,7 +7,7 @@
   <title>Cerdos DukMon</title>
   <link rel="stylesheet" href="./style.css" />
   <meta name="description"
-    content="Venta de carne de cerdo fresca: cortes prime, lechona, chorizos y más. Entregas a domicilio." />
+    content="Venta de carne de cerdo fresca: cortes prime, chorizos y más. Entregas a domicilio." />
 </head>
 
 <body>
@@ -20,8 +20,8 @@
       </a>
       <ul>
         <li><a href="./index.html">Inicio</a></li>
-        <li><a href="./servicio.html">Productos</a></li>
-        <li><a href="./nosotros.html">Nosotros</a></li>
+        <li><a href="/src/pages/servicio.html">Productos</a></li>
+        <li><a href="/src/pages/nosotros.html">Nosotros</a></li>
         <li><a href="#contacto">Contáctenos</a></li>
       </ul>
     </nav>
@@ -36,7 +36,7 @@
           <h1>Calidad Premium al mejor precio</h1>
           <p>Fresco, jugoso y seleccionado por expertos. Compra online y recibe en tu domicilio el mismo día.</p>
           <div style="display:flex;gap:10px">
-            <a class="btn btn-primary" href="./servicio.html">Ver productos</a>
+            <a class="btn btn-primary" href="/src/pages/servicio.html">Ver productos</a>
             <a class="btn btn-outline" href="#galeria">Ver galería</a>
           </div>
         </div>
@@ -50,28 +50,27 @@
         <p class="lead">Cortes populares para parrilla, cocina diaria y eventos especiales.</p>
         <div class="cards">
           <article class="card">
-            <img src="../assets/card-costillas.jpg" alt="Costillas de cerdo frescas" />
+            <img src="/src/Assets/Pierna.jpg" alt="Pierna de cerdo" />
             <div class="p">
-              
               <h3>Pierna</h3>
               <p>Pierna carnuda y pulpa, ideal para tus preparaciones diarias.</p>
-              <p class="price">$24.900 / lb</p>
+              <p class="price">$26.000 / Kg</p>
             </div>
           </article>
           <article class="card">
-            <img src="../assets/card-lomo.jpg" alt="Lomo de cerdo" />
+            <img src="/src/Assets/Tocino.jpg" alt="Tocino De Cerdo" />
             <div class="p">
-              <h3>Lomo Premium</h3>
-              <p>Magro, suave y versátil. Perfecto para medallones.</p>
-              <p class="price">$27.500 / lb</p>
+              <h3>Tocino</h3>
+              <p>Carnudo, suave y para preparaciones crocantes</p>
+              <p class="price">$26.000 / Kg</p>
             </div>
           </article>
           <article class="card">
-            <img src="../assets/card-chuleta.jpg" alt="Chuletas de cerdo" />
+            <img src="/src/Assets/Costilla.jpg" alt="Costilla" />
             <div class="p">
-              <h3>Chuleta Ahumada</h3>
-              <p>Listas para la sartén o parrilla. Sabor irresistible.</p>
-              <p class="price">$22.400 / lb</p>
+              <h3>Costilla de cerdo</h3>
+              <p>Listas para prepararla a tu gusto.</p>
+              <p class="price">$26.000 / Kg</p>
             </div>
           </article>
         </div>
@@ -82,9 +81,9 @@
     <section class="section">
       <div class="container">
         <div class="band">
-          <p><strong>¿Negocio o evento?</strong> Cotiza precios al por mayor y servicio de asado.</p>
+          <p><strong>¿Negocio o evento?</strong> Cotiza con nosotros los mejores precios.</p>
           <a class="btn btn-primary"
-            href="https://wa.me/573001112233?text=Hola%20CerdosDukMon,%20quiero%20cotizar%20al%20por%20mayor."
+            href="https://wa.me/573005335525?text=Hola%20CerdosDukMon,%20quiero%20cotizar%20al%20por%20mayor."
             target="_blank" rel="noopener">Cotizar en WhatsApp</a>
         </div>
       </div>
@@ -153,7 +152,7 @@ Correo: ${datos.correo}
 
 Mensaje:
 ${datos.mensaje}`;
-        const url = 'https://wa.me/573043628003?text=' + encodeURIComponent(texto);
+        const url = 'https://wa.me/573005335525?text=' + encodeURIComponent(texto);
         window.open(url, '_blank'); // abre WhatsApp web / app
       });
 
@@ -168,7 +167,7 @@ Correo: ${fd.get('correo')}
 
 Mensaje:
 ${fd.get('mensaje')}`;
-        const mailto = `mailto: angelbrahian026@gmail.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+        const mailto = `mailto: cerdos@gmail.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
         window.location.href = mailto; // abre el cliente de correo del usuario
       });
     </script>
